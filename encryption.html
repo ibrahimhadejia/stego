@@ -49,7 +49,7 @@ footer{text-align:center;margin-top:auto;font-size:14px}
   </div>
 </div>
 
-<footer>© 2026 CryptoStego | Secure Communication Tool</footer>
+<footer>&copy; 2026 Crypto Stego</footer>
 
 <script>
 function showLoader(){document.getElementById('loader').style.display='flex'}
@@ -75,7 +75,7 @@ function encryptAndHide(){
   showLoader();
   setTimeout(()=>{
     let encrypted = xorEncrypt(secretMsg.value, encPass.value);
-    let data = encrypted + "###END###";
+    let data = encrypted + "END";
     let imgData = ctx.getImageData(0,0,canvas.width,canvas.height);
     let binary = '';
     for(let i=0;i<data.length;i++) binary += data.charCodeAt(i).toString(2).padStart(8,'0');
