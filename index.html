@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CryptoStego - Secure Hidden Communication</title>
+<style>
+:root{--navy:#001F54;--light-blue:#E0F2FF;--white:#FFFFFF;--accent:#0077C2}
+*{margin:0;padding:0;box-sizing:border-box;font-family: 'Segoe UI', Arial}
+body{background:var(--light-blue);color:#333;line-height:1.6}
+
+/* HEADER */
+header{background:var(--navy);color:var(--white);padding:15px 20px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+nav{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:22px}
+.logo-icon{width:45px;height:45px;background:var(--white);color:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900}
+nav .links a{color:var(--white);text-decoration:none;margin-left:25px;font-weight:600;transition:0.3s}
+nav .links a:hover, nav .links a.active{color:var(--accent);border-bottom:2px solid var(--accent)}
+
+/* HERO */
+.hero{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:50px auto;padding:20px;gap:40px;flex-wrap:wrap}
+.hero-text{flex:1;min-width:300px}
+.hero-text h1{font-size:42px;color:var(--navy);margin-bottom:15px;line-height:1.2}
+.hero-text h1 span{color:var(--accent)}
+.hero-text p{font-size:18px;margin-bottom:25px;color:#444}
+.btn{background:var(--navy);color:var(--white);padding:14px 28px;border:none;border-radius:10px;cursor:pointer;font-weight:700;font-size:16px;text-decoration:none;display:inline-block;transition:0.3s}
+.btn:hover{background:var(--accent);transform:translateY(-2px)}
+.hero-img{flex:1;min-width:300px;text-align:center}
+.hero-img img{max-width:100%;border-radius:15px;box-shadow:0 8px 20px rgba(0,31,84,0.2)}
+
+/* FEATURES */
+.features{max-width:1200px;margin:40px auto;padding:20px}
+.features h2{text-align:center;color:var(--navy);font-size:32px;margin-bottom:40px}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+.feature-card{background:var(--white);padding:25px;border-radius:15px;box-shadow:0 4px 12px rgba(0,0,0,0.08);text-align:center;transition:0.3s}
+.feature-card:hover{transform:translateY(-5px)}
+.feature-icon{font-size:40px;margin-bottom:15px}
+.feature-card h3{color:var(--navy);margin-bottom:10px}
+
+/* HOW IT WORKS */
+.how{max-width:1200px;margin:40px auto;padding:20px;background:var(--white);border-radius:15px}
+.how h2{text-align:center;color:var(--navy);font-size:32px;margin-bottom:30px}
+.steps{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
+.step{background:var(--light-blue);padding:20px;border-radius:12px;width:250px;text-align:center;border:2px solid var(--navy)}
+.step-num{background:var(--navy);color:var(--white);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:700}
+
+/* FOOTER */
+footer{background:var(--navy);color:var(--white);text-align:center;padding:25px;margin-top:50px}
+footer p{margin:5px 0}
+
+/* LOADING */
+#loader{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,31,84,0.9);display:none;justify-content:center;align-items:center;z-index:999}
+.spinner{border:8px solid var(--light-blue);border-top:8px solid var(--white);border-radius:50%;width:70px;height:70px;animation:spin 1s linear infinite}
+@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+@media(max-width:768px){.hero-text h1{font-size:32px} nav .links a{margin-left:12px}}
+</style>
+</head><body>
+<div id="loader"><div class="spinner"></div></div>
+
+<header>
+  <nav>
+    <div class="logo"><div class="logo-icon">CS</div> CryptoStego</div>
+    <div class="links">
+      <a href="index.html" class="active">Home</a>
+      <a href="encryption.html">Encryption</a>
+      <a href="decryption.html">Decryption</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hide Your Secrets <span>In Plain Sight</span></h1>
+    <p>Welcome to <b>CryptoStego</b> - The ultimate web-based tool that combines <b>Cryptography + Steganography</b>. Encrypt your message with a password and hide it inside any image. 100% secure and runs offline in your browser.</p>
+    <a href="encryption.html" class="btn" onclick="showLoader()">Start Encrypting Now</a>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800" alt="Cyber Security">
+  </div>
+</section>
+
+<section class="features">
+  <h2>Why Choose CryptoStego?</h2>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Double Security</h3>
+      <p>Your message is first encrypted with a password, then hidden inside an image using LSB Steganography.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">💻</div>
+      <h3>100% Offline</h3>
+      <p>Everything runs in your browser. No data is sent to any server. Your privacy is guaranteed.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Fast & Easy</h3>
+      <p>Just upload an image, type your message, and download the stego image in seconds.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><h4>Encrypt</h4><p>Go to Encryption page, add message + password</p></div>
+    <div class="step"><div class="step-num">2</div><h4>Hide</h4><p>We hide the encrypted message inside your chosen image</p></div>
+    <div class="step"><div class="step-num">3</div><h4>Share</h4><p>Send the image to anyone. It looks normal!</p></div>
+    <div class="step"><div class="step-num">4</div><h4>Decrypt</h4><p>Receiver uses Decryption page + password to get message</p></div>
+  </div>
+</section>
+
+<footer>
+  <p><b>CryptoStego</b> | Secure Hidden Communication</p>
+  <p>© 2026 All Rights Reserved. Built with HTML, CSS & JavaScript</p>
+</footer>
+
+<script>
+function showLoader(){
+  document.getElementById('loader').style.display='flex';
+  setTimeout(()=>{document.getElementById('loader').style.display='none'},800);
+}
+</script>
+</body></html>
